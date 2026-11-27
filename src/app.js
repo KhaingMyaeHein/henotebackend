@@ -29,6 +29,8 @@ app.get("/health", (req, res) => {
 app.use("/api/auth", require("./routes/authRoute"));
 //http://localhost:4848/api/note/function
 app.use("/api/note",require("./routes/noteRoute"));
+//http://localhost:4848/api/admin/stats
+app.use("/api/admin",require("./routes/appRoutes"));
 
 app.use((err, req, res, next) => {
   res.status(err.status || 500).json({
